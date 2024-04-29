@@ -90,7 +90,7 @@ app.get("/profile",async(req,res)=>{
     } catch (error) {
        console.log(error); 
     }
-    
+     
 })
 
 app.post("/upload-by-link",async(req,res)=>{ 
@@ -170,7 +170,7 @@ app.get("/places/:id",async(req,res)=>{
 app.post("/logout",(req,res)=>{ 
     res.cookie("token","").json(true);
 })
-
+ 
 app.get("/places",async(req,res)=>{ 
     res.json(await PlaceModel.find());
 })
@@ -180,7 +180,7 @@ function getUserDataFromToken(req){
     jwt.verify(req.cookies.token,jwtsecret,{},async(err,user)=>{
         if (err) throw err
         resolve(user)
-    })
+    }) 
  })
 }
 
